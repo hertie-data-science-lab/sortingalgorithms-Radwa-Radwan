@@ -4,6 +4,7 @@ Created on Mon Apr 24 08:52:46 2023
 
 @author: Hannah
 """
+from bubbles import bubbleSort
 
 def bucketSort(array):
     bucket = []
@@ -15,11 +16,13 @@ def bucketSort(array):
     # Insert elements into their respective buckets
     for j in array:
         index_b = int(0.1 * j)
+        if index_b >= len(bucket):
+            index_b = len(bucket) - 1
         bucket[index_b].append(j)
 
     # Sort the elements of each bucket
     for i in range(len(array)):
-        bucket[i] = sorted(bucket[i])
+        bubbleSort(bucket[i])
 
     # Get the sorted elements
     k = 0
@@ -28,3 +31,4 @@ def bucketSort(array):
             array[k] = bucket[i][j]
             k += 1
     return array
+

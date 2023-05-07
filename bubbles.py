@@ -12,7 +12,7 @@ def bubbleSort(array):
 
     # loop to compare array elements
     for j in range(0, len(array) - i - 1):
-
+ 
       # compare two adjacent elements
       # change > to < to sort in descending order
       if array[j] > array[j + 1]:
